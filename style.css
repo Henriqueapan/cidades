@@ -105,6 +105,17 @@ body {
     grid-column: 1 / 4;
 }
 
+.js .js-scroll {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+.js .js-scroll.active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all .3s ease-in-out;
+}
+
 /* Animais */
 
 .animais h2 {
@@ -213,6 +224,11 @@ body {
     margin-left: 30px;
 }
 
+.js .js-accordion dt {
+    cursor: pointer;
+    user-select: none;
+}
+
 .js .js-accordion dd {
     display: none;
 }
@@ -220,11 +236,6 @@ body {
 .js .js-accordion dd.active {
     display: block;
     animation: slideDown .3s forwards;
-}
-
-.js .js-accordion {
-    user-select: none;
-    cursor: pointer;
 }
 
 .js .js-accordion dt::after {
@@ -246,7 +257,7 @@ body {
     to {
         opacity: 1;
         transform: translateY(0);
-        max-height: 300px;
+        max-height: 1000px;
     }
 }
 

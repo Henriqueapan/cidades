@@ -42,8 +42,8 @@ function accordionListInit(){
             i.addEventListener('click', activeAccordion)
         })
     }
-
 };accordionListInit();
+
 
 function smoothScrollInit(){
     const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]')
@@ -72,11 +72,11 @@ function smoothScrollInit(){
     })
 };smoothScrollInit();
 
+
 function scrollToTopInit(){
     const toTopButton = document.querySelector('.js-scroll-top')
     
     function checkWindowOffset() {
-        console.log("scrolled")
         if (document.querySelector('html').scrollTop >= 200){
             toTopButton.classList.add('active')
         }
@@ -96,3 +96,25 @@ function scrollToTopInit(){
 
     toTopButton.addEventListener('click', smoothScrollToTop)
 };scrollToTopInit();
+
+
+function animateScrollInit(){
+    const sections = document.querySelectorAll('.js-scroll')
+
+    sections[0].classList.add('active')
+
+    function animateScroll(){
+        sections.forEach(i => {
+            const sectionTopDist = i.getBoundingClientRect().top
+            const viewRangeParameter = window.innerHeight*.675
+            const isInViewRange = sectionTopDist <= viewRangeParameter
+
+            if (isInViewRange) {
+                i.classList.add('active')
+                console.log("Passou")
+            }
+        })
+    }
+
+    window.addEventListener('scroll', animateScroll)
+};animateScrollInit();
