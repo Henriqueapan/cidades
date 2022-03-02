@@ -333,7 +333,7 @@ body {
 }
 
 @media (max-width: 745px) {
-    .js .js-scroll-top:active {
+    .js .js-scroll-top:active, .js .js-scroll-top {
         display: none;
     }
     body {
@@ -369,6 +369,12 @@ body {
     .copy p {
         transform: none;
         margin: 0 auto;
+    }
+    .socials {
+        display: block;
+        margin-right: unset;
+        text-align: center;
+        height: 32px;
     }
 }
   
