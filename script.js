@@ -1,17 +1,21 @@
 function tabNavInit(){
-    const tabMenu = document.querySelectorAll('.js-tab-menu li')
-    const tabContent = document.querySelectorAll('.js-tab-content section')
+    const tabMenu = document.querySelectorAll('[data-tab="menu"] li')
+    const tabContent = document.querySelectorAll('[data-tab="content"] section')
     const activeClass = 'active'
-
+    
+    tabContent.forEach((i, index) => {
+        index % 2 == 0 ? i.dataset.anime = "show-right" : i.dataset.anime = "show-down"
+    })
 
     if(tabContent.length && tabMenu.length){
-        tabContent[0].classList.add(activeClass)
+        tabContent[0].classList.add(activeClass, "animate-right")
 
         function activeTab(index) {
-            tabContent[index].classList.add(activeClass)
+            animateClass = tabContent[index].dataset.anime == "show-right" ? "animate-right" : "animate-down"
+            tabContent[index].classList.add(activeClass, animateClass)
             tabContent.forEach((i, idx) => {
                 if (idx !== index) {
-                    i.classList.remove(activeClass)
+                    i.classList.remove(activeClass, "animate-right", "animate-down")
                 }
             })
         }
@@ -26,7 +30,7 @@ function tabNavInit(){
 
 
 function accordionListInit(){
-    const accordionList = document.querySelectorAll('.js-accordion dt')
+    const accordionList = document.querySelectorAll('[data-anime="accordion"] dt')
     const activeClass = 'active'
 
     if(accordionList.length){
@@ -46,7 +50,7 @@ function accordionListInit(){
 
 
 function smoothScrollInit(){
-    const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]')
+    const linksInternos = document.querySelectorAll('[data-menu="smooth"] a[href^="#"]')
 
     function scrollToSection(event) {
         event.preventDefault()
@@ -74,7 +78,7 @@ function smoothScrollInit(){
 
 
 function scrollToTopInit(){
-    const toTopButton = document.querySelector('.js-scroll-top')
+    const toTopButton = document.querySelector('[data-anime="scroll-top"]')
     
     function checkWindowOffset() {
         if (document.querySelector('html').scrollTop >= 200){
@@ -99,7 +103,7 @@ function scrollToTopInit(){
 
 
 function animateScrollInit(){
-    const sections = document.querySelectorAll('.js-scroll')
+    const sections = document.querySelectorAll('[data-anime="scroll"]')
 
     sections[0].classList.add('active')
 
@@ -118,3 +122,20 @@ function animateScrollInit(){
 
     window.addEventListener('scroll', animateScroll)
 };animateScrollInit();
+
+
+// Adicione um atributo data-anime="show-down" e
+// data-anime="show-right" a todos as section's
+// com descricão dos animais.
+
+
+// Utilizando estes atributos, adicione a classe
+// show-down ou show-right a sua respectiva section
+// assim que a mesma aparecer na tela (animacao tab)
+
+
+// No CSS faça com que show-down anime de cima para baixo
+// e show-right continue com a mesma animação da esquerda
+// para a direita
+
+// Substitua todas as classes js- por data atributes.

@@ -41,13 +41,13 @@ body {
     cursor: pointer;
 }
 
-.js .js-scroll-top {
+.js [data-anime="scroll-top"] {
     display: block;
     opacity: 0;
     transition: opacity .3s ease-in-out;
 }
 
-.js .js-scroll-top.active {
+.js [data-anime="scroll-top"].active {
     opacity: 1;
     transition: opacity .3s ease-in-out;
 }
@@ -105,12 +105,12 @@ body {
     grid-column: 1 / 4;
 }
 
-.js .js-scroll {
+.js [data-anime="scroll"] {
     opacity: 0;
     transform: translateX(-50px);
 }
 
-.js .js-scroll.active {
+.js [data-anime="scroll"].active {
     opacity: 1;
     transform: translateX(0);
     transition: all .3s ease-in-out;
@@ -170,23 +170,41 @@ body {
     margin-bottom: 3rem;
 }
 
-.js .js-tab-menu img {
-    cursor: pointer;;
+.js [data-tab="menu"] img {
+    cursor: pointer;
 }
 
-.js .js-tab-content section {
+.js [data-tab="content"] section {
     display: none;
 }
 
-.js-tab-content section.active {
-    display: block;
-    animation: show .5s forwards;
+[data-tab="content"] section.active {
+    display: block !important;
 }
 
-@keyframes show {
+[data-tab="content"] section.active.animate-right {
+    animation: show-right .5s forwards;
+}
+
+[data-tab="content"] section.active.animate-down {
+    animation: show-down .5s forwards;
+}
+
+@keyframes show-right {
     from{
         opacity: 0;
         transform: translate3d(-30px, 0, 0)
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0, 0, 0);
+    }
+}
+
+@keyframes show-down {
+    from{
+        opacity: 0;
+        transform: translate3d(0, -30px, 0)
     }
     to{
         opacity: 1;
@@ -224,26 +242,26 @@ body {
     margin-left: 30px;
 }
 
-.js .js-accordion dt {
+.js [data-anime="accordion"] dt {
     cursor: pointer;
     user-select: none;
 }
 
-.js .js-accordion dd {
+.js [data-anime="accordion"] dd {
     display: none;
 }
 
-.js .js-accordion dd.active {
+.js [data-anime="accordion"] dd.active {
     display: block;
     animation: slideDown .3s forwards;
 }
 
-.js .js-accordion dt::after {
+.js [data-anime="accordion"] dt::after {
     content: '⬎';
     font-size: 1.2rem;
 }
 
-.js .js-accordion dt.active::after {
+.js [data-anime="accordion"] dt.active::after {
     content: '⬏';
     font-size: 1.2rem;
 }
@@ -333,7 +351,7 @@ body {
 }
 
 @media (max-width: 745px) {
-    .js .js-scroll-top:active, .js .js-scroll-top {
+    .js [data-anime="scroll-top"]:active, .js [data-anime="scroll-top"] {
         display: none;
     }
     body {
