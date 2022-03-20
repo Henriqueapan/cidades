@@ -4,13 +4,16 @@ export default function smoothScrollInit(){
     function scrollToSection(event) {
         event.preventDefault()
         const href = event.currentTarget.getAttribute('href')
-        const targetSection = document.querySelector(href)
-        const targetYOffset = targetSection.offsetTop
-
-        window.scrollTo({
-            top: targetYOffset,
-            behavior: "smooth",
-        })
+        try {
+            const targetSection = document.querySelector(href)
+            const targetYOffset = targetSection.offsetTop
+    
+            window.scrollTo({
+                top: targetYOffset,
+                behavior: "smooth",
+            })
+        } catch (error) {
+        }
     }
 
         // scrollIntoView() method

@@ -40,6 +40,7 @@ body {
     font-weight: 900;
     font-size: 1.25rem;
     cursor: pointer;
+    z-index: 600;
 }
 
 .js [data-anime="scroll-top"] {
@@ -62,13 +63,14 @@ body {
     grid-template-columns: 50vw 1fr;
 }
 
-.menu ul {
+.menu ul:not(.dropdown-menu) {
     display: flex;
     grid-column: 2;
     flex-wrap: wrap;
     justify-content: center;
     padding: 10px;
     transform: translateX(-50%);
+    z-index: 1000;
 }
 
 .menu li a {
@@ -378,8 +380,9 @@ body {
         margin-top: 0;
         display: block;
     }
-    .menu ul {
+    .menu ul:not(.dropdown-menu) {
         transform: none;
+        z-index: 1000;
     }
     .copy {
         margin-bottom: 0;

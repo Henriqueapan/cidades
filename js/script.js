@@ -5,8 +5,10 @@ import accordionListInit from "./modules/animations/accordionList.js"
 import tabNavInit from "./modules/animations/tabNav.js"
 import modalInit from "./modules/modal.js"
 import tooltipInit from "./modules/tooltip.js"
+import dropDownMenuInit from "./modules/dropdown-menu.js"
 
 modalInit()
+dropDownMenuInit()
 animateOnViewInit()
 tabNavInit()
 accordionListInit()
