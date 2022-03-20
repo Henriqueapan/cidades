@@ -1,7 +1,10 @@
 export default function modalInit() {
     const openButton = document.querySelector('[data-modal="open"]')
     const closeButton = document.querySelector('[data-modal="close"]')
+    const sendButton = document.querySelector('button[type="submit"]')
     const modalContainer = document.querySelector('[data-modal="container"]')
+
+    sendButton ? sendButton.addEventListener('click', e => e.preventDefault()) : 0
     
     if (openButton && closeButton && modalContainer){
         function toggleModal(event) {

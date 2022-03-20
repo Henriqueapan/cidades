@@ -4,6 +4,7 @@ import scrollToTopInit from "./modules/animations/scrollToTop.js"
 import accordionListInit from "./modules/animations/accordionList.js"
 import tabNavInit from "./modules/animations/tabNav.js"
 import modalInit from "./modules/modal.js"
+import tooltipInit from "./modules/tooltip.js"
 
 modalInit()
 animateOnViewInit()
@@ -11,3 +12,4 @@ tabNavInit()
 accordionListInit()
 smoothScrollInit()
 scrollToTopInit()
+tooltipInit()
