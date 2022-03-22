@@ -5,13 +5,13 @@ export default function dropDownMenuInit() {
     
     if(dropDownMenus){
         dropDownMenus.forEach(i => {
-            ['touchend', 'click'].forEach(eName => i.addEventListener(eName, handleClick))
+            ['touchstart', 'click'].forEach(eName => i.addEventListener(eName, handleClick))
         })
         
         function handleClick(e) {
             e.preventDefault()
             this.classList.add('active')
-            outterClick(this, ['click', 'touchend'],() => {
+            outterClick(this, ['click', 'touchstart'],() => {
                 this.classList.remove('active')
             })
         }
