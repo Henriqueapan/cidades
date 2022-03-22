@@ -2,7 +2,7 @@ import outterClick from "./outterClick.js";
 
 export default function mobileMenuInit() {
     const menuButton = document.querySelector('[data-menu="button"]'),
-    uEvents = ['click', 'touchstart'],
+    uEvents = ['click', 'touch'],
     menuList = document.querySelector('[data-menu="list"]')
     
     function openMenu() {
