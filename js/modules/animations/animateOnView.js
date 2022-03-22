@@ -11,7 +11,6 @@ export default function animateOnViewInit(){
 
             if (isInViewRange) {
                 i.classList.add('active')
-                console.log("Passou")
             }
         })
     }
