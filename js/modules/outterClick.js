@@ -3,7 +3,12 @@ export default function outterClick(targetElement, events, callback) {
 
     if (!(targetElement.hasAttribute('data-outside'))){
         events.forEach(i => {    
-            html.addEventListener(i, handleOutterClick)
+            // setTimeout will add the listener to the call queue,
+            // therefore, if the activation button of the targetElement
+            // is effectively outside of it, clicking it to activate
+            // the targetElement will not trigger the html eventListener,
+            // which would then deactivate it once again.
+            setTimeout(() => html.addEventListener(i, handleOutterClick))
         })
         targetElement.setAttribute('data-outside', '')
     }
