@@ -8,6 +8,7 @@ import tooltipInit from "./modules/tooltip.js"
 import dropDownMenuInit from "./modules/dropdown-menu.js"
 import mobileMenuInit from "./modules/mobile-menu.js"
 import animateNumbersInit from "./modules/animations/numbers.js"
+import timesInit from "./modules/times.js"
 
 modalInit()
 mobileMenuInit()
@@ -19,3 +20,4 @@ accordionListInit()
 smoothScrollInit()
 scrollToTopInit()
 tooltipInit()
+timesInit()
