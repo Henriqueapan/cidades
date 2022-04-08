@@ -1,7 +1,7 @@
 import animateNumbersInit from "./animations/numbers.js";
 
 export default function fetchAnimalsInit() {
-    async function fetchAnimals(url = '../js/animals.json') {
+    async function fetchAnimals(url = './js/animals.json') {
         const numberSection = document.querySelector('.numeros-grid');
         try {
             const response = await fetch(url),
