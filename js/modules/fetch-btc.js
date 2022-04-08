@@ -1,7 +1,7 @@
 export default function fetchBitcoinInit() {
     fetchBitcoin(10)
 
-    async function fetchBitcoin(brl_qt, url = 'https://blockchain.info/ticker') {
+    async function fetchBitcoin(brl_qt = 1000, url = 'https://blockchain.info/ticker') {
         const numberSpan = document.querySelector('.btc-preco');
         try {
             const btc_response = await fetch(url),
