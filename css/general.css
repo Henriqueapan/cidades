@@ -312,6 +312,13 @@ body {
     background-color: #fb5;
 }
 
+.btc-preco {
+    background-color: rgb(95, 255, 47);
+    padding: .2rem .5rem;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
 .js li[data-week]::after {
     content: "";
     display: inline-block;
