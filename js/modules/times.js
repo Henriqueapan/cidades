@@ -12,8 +12,6 @@ export default function timesInit(){
     currWeekDay = currDate.getDay(),
     currHour = currDate.getHours()
 
-    console.log(currWeekDay)
-
     openDays.includes(currWeekDay) ?
     ((currHour < openTime[1] && currHour >= openTime[0]) ? handleOpen(true, times) : handleOpen(false, times)) :
     handleOpen(false, times)
