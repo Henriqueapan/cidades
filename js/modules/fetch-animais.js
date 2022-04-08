@@ -4,7 +4,7 @@ export default function fetchAnimalsInit() {
     async function fetchAnimals(url = '../animals.json') {
         const numberSection = document.querySelector('.numeros-grid');
         try {
-            const response = await fetch(url).catch((e) => {throw new Error(e)}),
+            const response = await fetch(url),
             json = await response.json();
             json.forEach(i => {
                 numberSection.appendChild(createAnimal(i))
