@@ -298,6 +298,7 @@ body {
 }
 
 .info li {
+    width: fit-content;
     margin-bottom: 1rem;
     font-family: Helvetica, Arial, sans-seriff;
 }

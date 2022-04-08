@@ -17,6 +17,13 @@ export default function timesInit(){
     handleOpen(false, times)
 
     function handleOpen(open, element){
-        open ? element.classList.add('open') : element.classList.add('closed')
+        // open ? element.classList.add('open') : element.classList.add('closed')
+        if (open) {
+            element.classList.add('open');
+            element.setAttribute('aria-label', 'Aberto')
+        } else {
+            element.classList.add('closed');
+            element.setAttribute('aria-label', 'Fechado')
+        }
     }
 }
