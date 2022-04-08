@@ -8,7 +8,7 @@ import tooltipInit from "./modules/tooltip.js"
 import dropDownMenuInit from "./modules/dropdown-menu.js"
 import mobileMenuInit from "./modules/mobile-menu.js"
 import timesInit from "./modules/times.js"
-import fetchAnimalsInit from "./modules/fetch-animais.js"
+import fetchAnimalsInit from "./modules/fetch-animals.js"
 import fetchBitcoinInit from "./modules/fetch-btc.js"
 
 modalInit()

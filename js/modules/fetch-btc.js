@@ -8,7 +8,7 @@ export default function fetchBitcoinInit() {
             btc_json = await btc_response.json(),
             btc_brl = btc_json.BRL,
             brlqt_btc = (brl_qt/btc_brl.buy),
-            brlqt_str = brl10_btc.toString();
+            brlqt_str = brlqt_btc.toString();
 
             let firstValueIndex = undefined
 
@@ -18,6 +18,7 @@ export default function fetchBitcoinInit() {
                     break
                 }
             }
+            
             numberSpan.innerText = `${brl10_btc.toFixed(firstValueIndex)}`
             numberSpan.setAttribute('aria-label', `Preço de 1 BTC:\n R$${btc_brl.buy}`)
         }
