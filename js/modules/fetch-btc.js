@@ -20,7 +20,7 @@ export default function fetchBitcoinInit() {
             }
 
             numberSpan.innerText = `${brlqt_btc.toFixed(firstValueIndex)}`
-            numberSpan.setAttribute('aria-label', `Preço de 10 reais:\n 0.00005 BTC`)
+            numberSpan.setAttribute('aria-label', `Preço de 1 BTC:\n R$${btc_brl.buy}`)
         }
         catch {
             numberSpan.innerText = `0.00005`
