@@ -18,13 +18,13 @@ export default function fetchBitcoinInit() {
                     break
                 }
             }
-            
-            numberSpan.innerText = `${brl10_btc.toFixed(firstValueIndex)}`
-            numberSpan.setAttribute('aria-label', `Preço de 1 BTC:\n R$${btc_brl.buy}`)
+
+            numberSpan.innerText = `${brlqt_btc.toFixed(firstValueIndex)}`
+            numberSpan.setAttribute('aria-label', `Preço de 10 reais:\n 0.00005 BTC`)
         }
         catch {
-            numberSpan.innerText = `0.0005`
-            numberSpan.setAttribute('aria-label', `Preço de 1 BTC:\n R$$0.0005`)
+            numberSpan.innerText = `0.00005`
+            numberSpan.setAttribute('aria-label', `Preço de 10 reais:\n 0.00005 BTC`)
         }
     }
 }
